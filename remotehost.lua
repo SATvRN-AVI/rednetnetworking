@@ -2,27 +2,34 @@
 
 peripheralList = peripheral.getNames()
 
+
 function manualWireless()
     while true do
         local event, character = os.pullEvent("char")
         if character == "w" then
             rednet.broadcast("w")
             print(character .. ": Moving forward...")
+            os.sleep(0.05)
         elseif character == "s" then
             rednet.broadcast("s")
             print(character .. ": Moving backward...")
+            os.sleep(0.05)
         elseif character == "a" then
             rednet.broadcast("a")
             print(character .. ": Turning left...")
+            os.sleep(0.05)
         elseif character == "d" then
             rednet.broadcast("d")
             print(character .. ": Turning right...")
+            os.sleep(0.05)
         elseif character == "z" then
             rednet.broadcast("z")
             print(character .. ": Going down...")
+            os.sleep(0.05)
         elseif character == "q" then
-            rednet.bradcast("q")
+            rednet.broadcast("q")
             print(character .. ": Going up...")
+            os.sleep(0.05)
         elseif character == "e" then
             rednet.broadcast("e")
             textutils.slowPrint("Terminating manual mode. Standby...")
